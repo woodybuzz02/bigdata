@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab01_box.html</title>
+    <style>
+        div {
+            box-sizing: border-box;
+            width: 300px;
+            height: 100px;
+            background-color: beige;
+            border: 5px solid;
+            border-color:blue;
+        }
+        p {
+            border-style: solid;
+            /* 상 | 우 | 하 | 좌 */
+            border-color: red blue yellow green;
+            /* 상 | 우 좌 | 하 */
+            border-color: red blue yellow;
+            /* 상 하 | 좌 우  */
+            border-color: red blue;
+        }
+
+        p.div-border {
+            border: 1px solid;
+            width: 150px;
+            height: 150px;
+            background: gainsboro;
+            /* border-top-left-radius: 10px; 
+            border-bottom-right-radius: 10px;*/
+            border-radius: 10px 15px 20px 5px;
+        }                                                                           
+    </style>
+</head>
+<body>
+    <!-- 전체를 다 잡아먹는 태그(블록형태) = div태그 --> 
+    <!-- lorem 가상데이터 적어주는 것 -->
+    <!-- 너비와 높이 부분이 컨텐츠에 영향을 끼친다.-->
+    <!-- boder에서 어떤 스타일로 할 지 정해야된다. -->
+    <!-- 박스 사이징 기본값 컨텐츠박스(컨텐츠 크기만)로 되어있다. 컨텐츠 높이+보더 높이 110px -->
+    <!-- 박스 사이징 보더박스는 컨텐츠+보더 높이가 100px -->
+    <!-- <div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et blanditiis non voluptas quod sit similique nostrum ipsam mollitia sint, reiciendis molestiae, laudantium tenetur rem consequuntur necessitatibus magni! Dignissimos, voluptate unde.
+    </div> -->
+
+    <br><br><br><br><br><br><br><br>
+    <p>
+        boder-color
+    </p>
+
+    <p class="div-border">
+
+    </p>
+
+
+
+</body>
+</html>

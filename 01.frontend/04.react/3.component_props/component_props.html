@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function formatDate(date) {
+            return date.toLocaleDateString();
+        }
+            //props는 직접 수정이 안되고 읽기전용
+        function Avatar(props) { // 컴포넌트 추출
+            return <img className="Avatar"
+            src={props.user.avatarUrl} 
+            alt={props.user.name}
+            />;
+        }
+
+        function UserInfo(props){ // 컴포넌트 추출
+            return <div className="UserInfo">
+                        <Avatar user = {props. userinfo}/>
+                    </div>;
+                    <div className="UserInfo-name">
+                        {props.userinfo.name}
+                    </div>;
+        }
+
+        function Comment(props) {
+            return(
+            <div classname = "Comment">
+                <div classname = "UserInfo">
+                   < UserInfo userinfo = {props. author}/>
+                </div>
+                <div className= "Comment-text">
+                    {props.text}
+                </div>
+                <div className= "Comment-date">
+                    {formatDate(props.date)}
+                </div>
+            </div> 
+            );
+        }
+
+        // 순수 JS 객체
+        const comment = {
+            author: {
+                name: 'Hello Kitty',
+                avatarUrl: 'http://placekitten.com/g/64/64'
+            },
+            text: '얍',
+            date: new Date(), //날짜값을 가지고 있는 객체
+        };
+
+        ReactDOM.render(<Comment //최상위 컴포넌트
+            text={comment.text}
+            date={comment.date}
+            author={comment.author}/>,
+            document.getElementById('root')); 
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+h2{
+    font-family: 'Rubik Puddles', cursive;
+}
+/* reset.css : 기본 css 스타일 초기화 */
+body{
+    margin: 0;
+    font-family:'Titillium Web','Open Sans';
+}
+/* style.css */
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    /* viewport height의 줄임말 viewport는 모니터 기준 퍼센트 */
+}
+
+.container {
+    text-align: center;
+}
+
+.container h2 {
+    color: white;
+    background-color: #000;
+    padding: 1rem;
+    /* 요소의 글꼴크기를 1 rem으로 사용한다. */
+    /* 반응형일때 쓰면 좋음. */
+}
+
+.btn{
+    border:2px dashed black;
+    font-family: inherit;
+    /* inherit 부모속성을 전달받음 */
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    background: transparent;
+    padding : 0.5rem 0.75rem 0.5rem 0.75rem;
+}

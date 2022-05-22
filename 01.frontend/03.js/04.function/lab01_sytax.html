@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab01_sytax.html</title>
+</head>
+<body>
+    <script>
+        // 함수 : 재사용성이 좋다.
+        // 함수 선언
+        function add(x, y){
+            console.log(x + y);
+        }
+        // 함수 호출 : 사용
+        add(1, 2);
+
+        // 입력값이 없는 것
+        function print(){
+            console.log('매개변수가 없는 함수');
+        }
+        print();
+
+        //실행 결과값을 함수 외부로 전달해준다(return)
+        //출력한다<-console이 함.
+        function add2(x, y){
+            return x + y;
+        }
+        console.log(add2(3, 4));
+        
+        function print2(){
+            return '매개변수가 없는 함수';
+        }
+        print2();
+
+        // 함수 정의하는 방법
+        // 함수의 선언식 : function 키워드 사용
+        function method1(){
+            console.log('함수의 선언식');
+        }
+
+        // 함수의 표현식 : function + 변수에 저장
+        let method2 = function() {
+            console.log('함수의 표현식');
+        }
+
+        method2();
+        //이름만 적혀있더라도 기능이 담겨있기때문에 소괄호를 붙여야한다.
+
+        function morning(){
+            console.log('힘차고 좋은 아침');
+        }
+
+        let hungry = function() {
+            console.log('배고파');
+        }
+
+        hungry()
+
+        function g(x, y){
+            return x % y;
+        }
+
+        console.log(g(10, 3));
+
+    </script>
+</body>
+</html>

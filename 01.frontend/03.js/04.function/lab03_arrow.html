@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab03_arrow.html
+    </title>
+</head>
+<body>
+    <script>
+        // let arrow = function() {
+        //     console.log('arrow function');
+        // }
+
+        let arrow = () => {
+            console.log('arrow function'); 
+        }
+
+        arrow();
+
+        // 직접해보기 : sum, minus에 대한 연산결과를 화살표 함수로 만들기
+        let sum = (x, y) => {
+            console.log(x + y); 
+        }
+
+        let minus = (x, y) => {
+            console.log(x - y); 
+        }
+
+        sum(1,2)
+        minus(1,2)
+
+        // 즉시 실행 함수(호출하지않고 바로 실행)
+
+        // (function immediatelyFunc(){
+        //     alert('welcome');
+        // }());
+        
+        //   (function(){
+        //     alert('welcome');
+        // }());
+        // 익명함수도 된다.
+
+        // 입력값이 있는 함수는 어떻게 즉시 실행함수로 만들어질까?
+            let data = 'welcome';
+             (function immediatelyFunc2(data){
+                alert(data);
+            }(data));
+
+            (function immediatelyFunc3(data){
+            alert(data);
+            })(data);
+        
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

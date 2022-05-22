@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab02_box.html</title>
+    <style>
+        .content-box {
+            width:300px;
+            border:5px solid;
+            margin: 15px;
+            padding: 15px;
+            background-color: red;
+        }
+        .border-box {
+            box-sizing: border-box;
+            width:300px;
+            border:5px solid;
+            /* margin: 15px; */
+            padding: 15px;
+            background-color: red;
+        }
+        /* 기본값으로 마진이 있다. 그래서 다 다시 정하려고 reset css한다. */
+        /* 참고사이트 https://meyerweb.com/eric/tools/css/reset/ */
+    </style>
+</head>
+<body>
+    <div >
+        <div class="content-box">
+            Content Box
+        </div>
+        <div class="border-box">
+            Border Box
+        </div>
+    </div>
+</body>
+</html>

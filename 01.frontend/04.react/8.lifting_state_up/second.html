@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>    
+
+    <script type="text/babel">
+
+        const { useState } = React;
+
+        const scaleNames = {
+            c: '섭씨',
+            f: '화씨',
+        };
+
+
+        function toFahrenheit(celsius){
+            return (celsius * 9 / 5) + 32;
+        }
+
+        function toCelsius(fahrenheit){
+            return (fahrenheit - 32 ) * 5 / 9;
+        }
+
+        function tryConvert(temperature, convert) {
+            const input = parseFloat(temperature);
+
+            if (Number.isNaN(input)) {
+                return '';
+            }
+
+            const output = convert(input);
+            const rounded = Math.round(output * 1000) / 1000;
+            return rounded.toString();
+        }
+
+
+        const Calculator = props => {
+
+            const [state, setState] = useState({ temperature: '', scale: '' });
+            
+            const temperature = state.temperature;
+            const scale = state.scale;
+
+            const fahrenheit = scale === 'c'? tryConvert(temperature, toFahrenheit) : temperature;
+            const celsius = scale === 'f'? tryConvert(temperature, toCelsius) : temperature;
+
+            const changeTemperatureHandler = (inputValue, scale) => {
+                setState({temperature: inputValue, scale: scale});
+                console.log(state);
+            }
+
+            return (
+                <>
+                    <TemperatureInput scale= 'c' temperature={celsius} onTemperatureChange={changeTemperatureHandler}/>
+                    <TemperatureInput scale= 'f' temperature={fahrenheit} onTemperatureChange={changeTemperatureHandler}/>
+                    <BoilingVerdict celsius={temperature}/>
+                </>
+            );
+        };
+
+        const TemperatureInput = props => {
+
+            const inputchangeHandler = (event) => {
+                const inputValue = event.target.value;
+                const scale = props.scale;
+                props.onTemperatureChange(inputValue, scale);
+            };
+
+            return (
+                <fieldset>
+                    <legend>{scaleNames[props.scale]} 온도를 입력하세요 : </legend>
+                    <input type="text" value={props.temperature} onChange={inputchangeHandler}/>
+                </fieldset>
+            )
+
+            
+        }
+        
+        // 입력한 값이 끓는점 온도인지의 여부에 따라 출력문을 분기하는 컴포넌트
+        const BoilingVerdict = props => {
+            // celsius : 섭씨온도
+            const celsius = props.celsius;
+            return celsius >= 100 ? <p>물이 끓는점입니다.</p> : <p>끓는점이 아직 아닙니다.</p>;
+        }
+
+        ReactDOM.render(<Calculator />, document.getElementById('root'));
+    </script>
+</body>
+</html>

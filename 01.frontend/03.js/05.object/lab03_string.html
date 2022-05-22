@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab03_string.html</title>
+</head>
+<body>
+    <String>
+        // String
+        let str1 = 'abcdefg';
+
+        // 문자열 조회
+        // charAt : 해당 인덱스의 문자열을 반환
+        // console.log(str1.charAt(2));
+        // console.log(str1.indexOf(2));
+        // console.log(str1[0]); // 시퀀스(데이터가 나열되는 특성을 가진) 객체
+        
+        // substring
+        // console.log(str1.substring(3, 5));
+
+        // replace
+        // console.log(str1.replace('bcd', 'BCD'));
+
+        // split()
+        let str2 = 'HTML,CSS,JS,PYTHON,JAVA,SQL,HADOOP';
+        // console.log(str2.split(','));
+
+        // concat()
+        let str3 = '노는게';
+        let str4 = '제일좋아';
+        console.log(str3.concat(str4));
+        // console.log(str3 + str4);
+
+        // 명시적 형변환
+        console.log(typeof(String(1)));
+        console.log(String(1));
+        console.log(String(true));
+        console.log(String(NaN));
+        console.log((1).toString());
+        console.log(typeof((1).toString())); 
+    </String>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>220329_서예원.html</title>
+    <style>
+        header{
+            background-color: ghostwhite;
+            border-radius: 6px;
+        }
+        .main-logo {
+            color: wheat;
+            text-align: center;
+            font-size: 40px;
+            background-color: gray;
+            margin:auto;
+            border-radius: 6px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .menu {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 6px;
+            padding: 10px;
+            width: 100px;
+            height: 30px;
+            background-color: gainsboro;
+            text-align: center;
+            border: solid;
+        }
+        .q {font-size: 30px}
+        
+        article{
+            height:500px;
+            float : left;
+            width : 50%;
+            padding:20px;
+            background-color : lightpink;
+            border-radius: 6px;
+        }
+        nav {
+            float: left;
+            width: 40%;
+            height: 500px;
+            background-color: gainsboro;
+            padding: 20px;
+            border-radius: 6px;
+            }   
+        nav ul {
+            list-style-type: none;
+                padding: 0;
+            }
+        section{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="main-logo"> 배운 것을 활용하자! </div>
+        <div class="container">
+            <div class="menu menu1" onclick="location.href=''">html</div>
+            <div class="menu menu2" onclick="location.href=''">css</div>
+            <div class="menu menu3" onclick="location.href=''">css활용</div>
+        </div>
+    </header>
+    
+    <section>
+        <article>
+            <p class="q">html과 css를 왜 공부해야할까?</p>
+            <p>HTML / CSS를 배우는 이유는 의외로 간단한 것으로 HTML문과 CSS를 활용해서 웹브라우저상에서 동일한 모습이 나오도록 하는 것을 주 내용으로 공부를 하는 것으로 웹을 구성하는 가장 밑단계에 이르는 내용입니다.</p>
+            <p>그래서 HTML문은 기본적으로 어떻게 웹을 구성하는 것이 가능하도록 하는 언어여서 웹을 만들때에 기본적으로 올바르게 어떻게 구성을 해야 하는지를 알고 있어야 제대로 된 구성이 가능합니다.</p>
+            <p>그리고 CSS는 웹을 구성할때에 디자인적인 면모를 가지고 있어서 HTML문에 있는 위치별, 내용별로 웹의 모습을 바꾸는 것이 가능하며 이를 잘 활용하면 CSS의 한번의 변경으로 수백문서에 달하는 HTML문을 손쉽게 변경을 할 수가 있어서 CSS에 대해서도 정확하게 아실 필요가 있습니다.</p>
+            <p>우리가 사용하는 웹 사이트의 구조와 원리를 공부하다 보면, 웹 상의 크고 작은 문제들을 이해할 수 있습니다.  </p>
+        </article>
+        <nav>
+            <ul>
+                <li><a href="https://developer.mozilla.org/ko/docs/Web/CSS/flex">공부에 도움이 되는 사이트 1</a></li>
+                <li><a href="https://studiomeal.com/archives/197">공부에 도움이 되는 사이트 2</a></li>
+                <li><a href="https://heropy.blog/2018/11/24/css-flexible-box/">공부에 도움이 되는 사이트 3</a></li>
+        </nav>
+    </section>
+
+</body>
+</html>

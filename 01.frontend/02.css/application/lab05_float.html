@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab05_float.html</title>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+            float: left;
+            margin-right: 20px;
+        }
+        .box {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 6px;
+            padding: 10px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .box1, .box3{
+            background: red;
+        }
+        .box2, .box4{
+            background: orange;
+        }
+        .box1, .box2{
+            float: left;
+        }
+        .box3, .box4{
+            float: right;
+        }
+        /* .lorem {
+            clear: both;
+        } */
+        .container::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        /* 가상의 요소 생기면서 거기에 들어감. */
+    </style>
+</head>
+<body>
+    <!-- <img src="https://media.wired.co.uk/photos/60c8730fa81eb7f50b44037e/3:2/w_3329,h_2219,c_limit/1521-WIRED-Cat.jpeg" >
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eum eveniet porro quam exercitationem eaque facere iusto! Corporis, dolorum tenetur? Veniam cupiditate esse doloremque? Repellendus, distinctio veniam? Sed, nostrum corporis?
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed sunt assumenda omnis quidem nostrum officia quis. Incidunt aut perferendis magnam accusantium mollitia? Fugiat eius, laborum rem quae earum deserunt quo.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo sint fugiat excepturi beatae voluptas assumenda quod, ullam quaerat sed velit consectetur molestias officia harum minus aspernatur ad cumque sequi labore.
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam voluptas, quis tempora quia cumque est dolor illum itaque id et minus vero maiores. Odio distinctio neque aliquid esse tempora deleniti!
+    </div> -->
+
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+    </div>
+    <div class="lorem">
+        Lorem ipsum dolor sit amet.
+    </div>
+<br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+<!-- float 
+    -기본적인 문서 배치의 흐름에서 벗어나 요소의 모서리가 페이지의 왼쪽이나 오른쪽으로 이동하는 것을 말한다.
+    -설정 가능한 값(value) none, left, right
+    -특정 요소를 떠있게, 흐르도록, 부유하게 하도록 하는 속성
+    box {
+        float: value;
+    }
+    left : 요소를 왼쪽 방향으로 부유하게 설정
+    right : 요소를 오른쪽 방향으로 부유하게 설정
+    none : 기본값(default), 요소를 띄우지 않는다.
+    플롯 속성을 사용할 요소는 position 속성의 absolute 값과 양립할 수 없습니다.
+    
+-->

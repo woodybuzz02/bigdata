@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab03_operator.html</title>
+</head>
+<body>
+    <script>
+        // 연산자
+        // 산술연산
+        console.log(5 * 300);
+        console.log(30 % 7); // % 나누고 나서 나머지 값
+        console.log(10 ** 4); // 제곱
+
+        // 문자열 연산 ~ 출력
+        const name = 'yw';
+        const name2 ='jh';
+        console.log(name + name2); // 연결시켜주는 거로 됨.
+        console.log(name * 3); // 문자열과 숫자는 연산이 안됨.
+        console.log(name + 3); // 이거는 됨.
+
+        // 증가연산 : ++, --
+        let num = 10;
+        console.log(num); //10
+        console.log(++num); // ++ : +1 // 11
+        console.log(num); //11
+        console.log(num++); //11
+        console.log(num); //12
+        console.log();
+    </script>
+
+    <script>
+        // 할당연산 : =
+        let num2 = 20;
+        console.log(num2);
+
+        num2 += 10; // num2 = num2 + 10
+        console.log(num2);
+
+        num2 *= 10; // num2 = num2 * 10
+        console.log(num2);
+    </script>
+
+    
+    <script>
+        // 비교연산 : =
+        let num2 = 20;
+        console.log(num2);
+
+        num2 += 10; // num2 = num2 + 10
+        console.log(num2);
+
+        num2 *= 10; // num2 = num2 * 10
+        console.log(num2);
+    </script>
+
+      
+    <script>
+        // 비교연산 : ==, <, >, <=, >=
+        let num3 = 30;
+        let num4 = 40;
+        // console.log(num3 == num4);
+        // console.log(num3 != num4);
+
+        console.log(num3 == 30);
+        console.log(num3 == '30'); //크기만 구분
+        console.log(num3 === '30'); //크기와 더불어 타입도 구분한다.
+
+        // typeof
+        console.log(typeof((num3));
+        console.log(typeof(('30'));
+    
+    </script>
+
+    <script>
+        // 논리연산 : &&(and), ||(or), !(not)
+        let t = true;
+        let f = false;
+
+
+        // console.log(t && t);
+        // console.log(t && f);
+        // console.log(f && f);
+
+        // console.log(t || t);
+        // console.log(t || f);
+        // console.log(t || f);
+
+        // console.log(!t) ;
+        // console.log(!f) ;
+
+    </script>
+        
+
+
+</body>
+</html>

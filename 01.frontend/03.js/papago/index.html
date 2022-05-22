@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="">웹사이트</a></li>
+                    <li><a href="">번역</a></li>
+                    <li><a href="">GYM</a></li>
+                    <li><a href="">사전</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div id = "before-area" class = "area">
+                    <div class = "menu">
+                        <select name="language" id="before">
+                            <option selected>자동 언어감지</option>
+                            <option value="1">한국어</option>
+                            <option value="2">English</option>
+                            <option value="3">日本語</option>
+                        </select>
+                </div>
+                <div class = "text">
+                    <form action="">
+                        <p><textarea name="" placeholder= "문구를 입력하세요." id="before_text" class="text-area" cols="30" rows="10"></textarea>
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <div id = "after-area" class = "area">
+                <div class="menu">
+                    <select name="language" id="after">
+                        <option selected>자동 언어감지</option>
+                        <option value="1">한국어</option>
+                        <option value="2">English</option>
+                        <option value="3">日本語</option>
+                    </select>
+                </div>
+                <div class="text">
+                    <form action="">
+                        <p><textarea name="" id="after_text" class="text-area" cols="30" rows="10"></textarea></p>
+                    </form>
+                </div>
+            </div>
+                    </section>
+        <footer>
+        </footer>
+    </main>
+</body>
+</html>

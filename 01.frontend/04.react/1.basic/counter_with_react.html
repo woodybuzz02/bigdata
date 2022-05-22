@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CDN Content Delivery Network -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <button>Increase</button>  
+    <script>
+        console.log(React); //React의 최상위 API, React 라이브러리의 진입점
+        // 이전 상태(<p>0</p>)와 마지막의 가장 최근 상태(<p>1</p>)와의 차이를 비교해주고,
+        // 이 변경내역 감지하여 ReactDOM한테 전달함.
+        
+        //console.log(ReactDOM); //React로 생성한 컴포넌트를 브라우저(Real DOM)한테 전달해주는 역할.
+
+        //const component = React.createElement('div', null, 'div입니다.');
+        //console.log(component); // <div>div입니다.</div>
+        //ReactDOM.render(component, document.getElementById('root'));
+        //const component2 = React.createElement('div', null, 'div입니다', React.createElement('p', null, 'p입니다.')); 중첩
+        //ReactDOM.render(component2, document.getElementById('root'));
+        
+        //커스텀 컴포넌트(일반적으로 대문자로 시작)
+        //일반 HTML 엘리먼트 <div>, <img/>, <a/>, <h1>들은 소문자로 시작하기 때문에 구분을 두기 위해
+        // 1. 클래스형 컴포넌트 : class Component ~
+        // 2. 함수형 컴포넌트 : 함수의 형태로 작성
+    
+        // const component = function(props) {
+        //     return React.createElement('p', null, `${props.count}`);
+        // }
+        const component = props => React.createElement('p', null, `${props.count}`);
+
+        console.log(typeof Component);
+
+        //props의 타입은? object //const props = { count: 1 }
+
+        //초기 렌더링
+        ReactDOM.render(React.createElement(component, {count:0}, null), document.getElementById('root'));
+
+        let i = 0;
+
+        //클릭 이벤트 발생에 따라 Re-Rendering
+        const button = document.querySelector('button');
+        button.addEventListener('click', () => {
+            ReactDOM.render(React.createElement(component, {count : ++i}, null), document.getElementById('root'));
+        });
+
+    </script>
+</body>
+</html>

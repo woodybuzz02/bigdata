@@ -1,0 +1,44 @@
+header {
+    /* background-color:red; */
+    height:50px;
+}
+nav {
+    margin:0 auto;
+}
+ul {
+    margin:10px;
+    list-style:none;
+}
+ul li {
+    display:inline;
+}
+section {
+    justify-content: center;
+    display:flex;
+}
+.area {
+    /* background-color:red; */
+    float:left;
+    margin:50px;
+    width : 40%;
+    height: 400px;
+    vertical-align: middle;
+    border: 1px dashed green;
+}
+p {
+    /* background-color:blue; */
+}
+.menu {
+    height:20px;
+    margin:15px;
+    /* background-color:blue; */
+    justify-content: center;
+    display:flex;
+}
+.text-area {
+    font-size:20px;
+    margin: 20px;
+    width:90%;
+    height:300px;
+    resize:none;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>    
+
+    <script type="text/babel">
+    //map은 callback 함수를 각각의 요소에 대해 한번씩 순서대로 불러 그 함수의 반환값으로 새로운 배열을 만듭니다.
+    const numbers = [1, 2, 3, 4, 5];
+    const doubled = numbers.map((number) => number * 2); //number * 2가 콜백함수
+    console.log(doubled);
+    //React에서 배열을 엘리먼트 리스트로 만드는 방식은 이와 거의 동일 합니다.
+
+    //여러 컴포넌트 렌더링하기 - 엘리먼트 모음을 만들고 중괄호 {}를 이용
+    const numberlist = numbers.map((number) =>
+        <li>{number}</li>
+    );
+
+    ReactDOM.render(<ul>{numberlist}</ul>, document.getElementById('root'));
+
+
+    </script>
+</body>
+</html>

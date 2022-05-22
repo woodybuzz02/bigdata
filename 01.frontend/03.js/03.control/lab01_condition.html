@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab01_condition.html</title>
+</head>
+<body>
+    <script>
+        // 조건문
+        // if
+        let age = 25;
+        // if(age > 17){ 
+        //     console.log('투표가능');
+        // }
+        // if(age <= 17) {
+        //     console.log('투표 불가능')
+        // }
+
+        // else(if)
+        if(age > 17) {
+            console.log('투표 가능');
+        }else {
+            console.log('투표 불가능');
+        }
+
+        // else if
+        if(age == 17) {
+            console.log('투표 가능');
+        }else if(17 >= age && age>= 0){
+            console.log('투표 불가능');
+        }else {
+            onsole.log('age 값 자체가 0보다 작음');
+        }
+
+        // switch/case문 숫자도 비교가능
+        let stuff = 'bronze' ;
+        switch(stuff) {
+            case 'gold':
+                console.log('금입니다.');
+                break;
+            case 'silver':
+                console.log('은입니다.');
+                break;
+            default :
+                console.log('격려합니다.');
+                break;
+        }
+        </script>    
+
+</body>
+</html>
+<!-- break은 반복문에서 쓰인다. -->

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab06_layout.html</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        /* header */
+        header {
+        background-color: gray;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+    }
+         /* h1 {
+             margin: 0;
+            } */
+        /* nav */
+        nav {
+            float: left;
+            width: 30%;
+            height: 300px;
+            background-color: gainsboro;
+            padding: 20px;
+            }   
+        nav ul {
+            list-style-type: none;
+                padding: 0;
+            }
+        article{
+            height:300px;
+            float : left;
+            width : 70%;
+            padding:20px;
+            background-color : lightpink;
+        }
+        section::after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        footer {
+            background-color: gray;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+        @media screen and (min-width:800px){
+            nav {
+                width: 100%
+            }
+            article {
+                width: 100%
+            }
+        }
+        /* 미디어 쿼리로 조절 전체 넓이(max-width:800px)가 800px이하이면 nav 넓이 100%, article 100%로 한다. (반응형) */
+        /* max-width:800pxmax-width:800px <-> min-width:800px */
+        </style>
+    </head>
+    <body>
+        <!-- 헤더 -->
+        <header>
+            <h1>header</h1>
+        </header>
+        <!-- 섹션 -->
+        <section>
+            <!-- 내비 -->
+            <nav>
+                <ul>
+                    <li><a href="">nav 1</a></li>
+                    <li><a href="">nav 2</a></li>
+                    <li><a href="">nav 3</a></li>
+            </nav>
+            <!-- 아티클 -->
+            <article>
+                <h2>article</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime aliquam soluta eaque quae error nesciunt sequi, voluptatem et distinctio voluptate incidunt, veniam cum tenetur magnam ea sapiente iure! Beatae, magni.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae repellat nam reprehenderit libero commodi harum, quia eaque quaerat illum ducimus. Excepturi voluptas vero, porro magni quaerat neque optio non temporibus.</p>
+            </article>
+        </section>
+        <!-- 푸터 -->
+        <footer>
+            <p>footer:bigdata10th</p>
+        </footer>;
+        
+    </body>
+    </html>
+    <!-- https://developer.mozilla.org/ko/docs/Web/CSS/flex
+     -->
+     <!-- https://studiomeal.com/archives/197 -->
+     <!-- https://heropy.blog/2018/11/24/css-flexible-box/ -->
