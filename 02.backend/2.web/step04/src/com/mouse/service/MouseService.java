@@ -41,4 +41,10 @@ public class MouseService {
 		int result = dao.mouseUpdate(mouse);
 		return result;
 	}
+
+	public int mouseDelete(Mouse mouse) {
+		int result = dao.mouseDelete(mouse);
+		return result;
+		
+	}
 }

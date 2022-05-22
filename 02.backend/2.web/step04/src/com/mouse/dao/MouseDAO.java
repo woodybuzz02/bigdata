@@ -125,4 +125,19 @@ public class MouseDAO {
 		return 0;
 	}
 
+	public int mouseDelete(Mouse mouse) {
+		String sql = "DELETE FROM mouse where id = ?;";
+		try (Connection con = DBUtils.getConnection(); 
+			PreparedStatement pstmt = con.prepareStatement(sql);) {
+
+			pstmt.setInt(1, mouse.getId());
+
+			// DB Query 수행
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
 }

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.mouse.controller.subcontroller.MouseDeleteController;
 import com.mouse.controller.subcontroller.MouseInsertController;
 import com.mouse.controller.subcontroller.MouseListController;
 import com.mouse.controller.subcontroller.MouseReadController;
@@ -28,6 +29,7 @@ public class FrontController extends HttpServlet{
 		list.put("insert", new MouseInsertController());
 		list.put("read", new MouseReadController());
 		list.put("update", new MouseUpdateController());
+		list.put("delete", new MouseDeleteController());
 	}
 
 	@Override

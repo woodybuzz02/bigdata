@@ -52,5 +52,6 @@
 		</c:choose>
 	</table>
 	<a href = "<%=request.getContextPath()%>/mouseInsert.jsp">mouse 등록</a>
+	<a href = "<%=request.getContextPath()%>/mouseDelete.jsp">mouse 삭제</a>
 </body>
 </html>
