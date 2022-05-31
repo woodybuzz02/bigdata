@@ -122,5 +122,8 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,java,eclipse
 
-00.sw/
+
+
+00.sw/*
+!00.sw/6.springboot
 
