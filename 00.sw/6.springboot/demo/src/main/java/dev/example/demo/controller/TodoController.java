@@ -3,7 +3,9 @@ package dev.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +16,7 @@ import dev.example.demo.model.Todo;
 import dev.example.demo.service.TodoService;
 
 @RestController //@Controller(==@Component) + @ResponseBody
-@RequestMapping("api/v1")
+@RequestMapping("api/v1/todos")
 public class TodoController {
 	
 	@Autowired // 필드를 통한 인젝션(주입, DI)
@@ -34,5 +36,10 @@ public class TodoController {
 	public List<Todo> update(@RequestBody Todo todo){
 		return todoservice.update(todo);
 	}
+	
+	@DeleteMapping("/{id}")
+	public List<Todo> delete(@PathVariable("id") Long id){
+		return todoservice.delete(id);	}
+	
 	
 }

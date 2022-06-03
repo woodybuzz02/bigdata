@@ -11,4 +11,6 @@ public interface TodoService {
 	Todo save(Todo todo);
 
 	List<Todo> update(Todo todo);
+
+	List<Todo> delete(Long id);
 }

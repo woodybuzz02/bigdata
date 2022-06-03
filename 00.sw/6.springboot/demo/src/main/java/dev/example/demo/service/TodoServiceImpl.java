@@ -14,6 +14,12 @@ public class TodoServiceImpl implements TodoService{
 	
 	@Autowired
 	private TodoRepository repository;
+	
+	/**
+	 * 메서드에 대한 설명을 잠깐 설명할 때 쓰는 것
+	 * 예시) 전체 할 일 목록을 조회한다.
+	 * @return 전체 할 일 목록(list)
+	 */
 
 	//@Override 에러 나신분들 JRE1.6으로 변경하면 해결되긴 합니다 참고하세요!
 	public List<Todo> findAll() {
@@ -29,12 +35,23 @@ public class TodoServiceImpl implements TodoService{
 		
 		
 	}
-
+	/**
+	 * 할 일을 등록한다.
+	 * 
+	 * @param todo 새롭게 등록할 할 일 정보
+	 * @return 등록된 할 일 정보
+	 */
 	public Todo save(Todo todo) {
 		
 		return repository.save(todo);
 	}
 	
+	/**
+	 * 해당 할 일을 수정한다.
+	 * 
+	 * @param todo 수정할 할 일 정보
+	 * @return 수정된 할 일 정보
+	 */
 	public List<Todo> update(Todo todo){
 		final Optional<Todo> foundTodo = repository.findById(todo.getId());
 		//NullPointer 예외를 방지하기 위함
@@ -47,6 +64,22 @@ public class TodoServiceImpl implements TodoService{
 			// newTodo : update완료 후 DB에 persist할 데이터
 			
 			repository.save(newTodo);
+		});
+		
+		return repository.findAll();
+	}
+	
+	/**
+	 * 해당 할 일을 삭제한다.
+	 * 
+	 * @param id 삭제할 할 일의 id
+	 * @return 삭제된 할 일 정보
+	 */
+	@Override
+	public List<Todo> delete(Long id) {
+		final Optional<Todo> foundTodo = repository.findById(id);
+		foundTodo.ifPresent(todo ->{
+			repository.delete(todo);
 		});
 		
 		return repository.findAll();
