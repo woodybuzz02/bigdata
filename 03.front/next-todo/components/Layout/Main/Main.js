@@ -1,16 +1,37 @@
 import React from 'react'
 import Todos from '../../Todos/Todos';
 import styles from './Main.module.css'
+import PlusIcon from '../../../public/static/svg/plus.svg'
+import { useRouter } from 'next/router'
 
-function Main(props) {
-    console.log(props.todos);
-  return (
-    <div>
-        <input className={styles['new-todo']} placeholder="What needs to be done?" autoFocus/>
-        <Todos todos={props.todos} />
 
-    </div>
-  )
+const Main = (props) => {
+    // console.log(props.todos);
+    const router = useRouter();
+    
+
+    // Add Todo
+    const addTodo = () => {
+      console.log('addTodo');
+      router.push('/todo/add');
+    }
+
+    // Delete Todo
+    const deleteTodo = (id) => {
+      props.deleteTodo(id);
+    }
+    return (
+    <>
+        <div className={styles['todo-header']}>
+          <PlusIcon className={styles['new-todo']} onClick={addTodo}/>
+          <input className={styles['search-todo']} type="text" placeholder="What needs to be done?" autoFocus/>
+        </div>
+        <Todos 
+          todos={props.todos}
+          deleteTodo={deleteTodo}
+        />
+    </>
+    )
 }
 
 export default Main
