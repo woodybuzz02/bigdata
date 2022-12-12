@@ -22,6 +22,7 @@ const Home = (props) => {
     const todos = await res.json();
     setTodos(todos); // 삭제 후 새롭게 갱신된 todos로 state값 업데이트
   }
+
   return (
     <>
       {/* Head 해당 페이지의 메타 정보 */}
@@ -34,9 +35,6 @@ const Home = (props) => {
       <Main todos={todos} deleteTodo={deleteTodo}/>
       {/* Footer */}
       <Footer />
-
-
-    
     </>
   )
 }
@@ -49,7 +47,7 @@ export const getServerSideProps = async () => {
   try {
     const res = await fetch('http://localhost:8080/api/v1/todos');
     const todos = await res.json();
-    // console.log(todos);
+    console.log(todos);
     return { // 객체를 반환
       props: { todos } // 그 객체는 props라는 이름의 프로퍼티를 가지고 있고
       // 그 프로퍼티의 값은 객체

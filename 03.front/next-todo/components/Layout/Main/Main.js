@@ -20,6 +20,13 @@ const Main = (props) => {
     const deleteTodo = (id) => {
       props.deleteTodo(id);
     }
+
+    // Update Todo
+    const putTodo = (todo) => {
+      props.putTodo(todo);
+    }
+
+
     return (
     <>
         <div className={styles['todo-header']}>
@@ -29,6 +36,7 @@ const Main = (props) => {
         <Todos 
           todos={props.todos}
           deleteTodo={deleteTodo}
+          putTodo={putTodo}
         />
     </>
     )

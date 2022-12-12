@@ -2,8 +2,13 @@ import React from 'react'
 import Todo from './Todo/Todo'
 
     const todos = (props) => {
+
         const deleteTodo = (id) => {
           props.deleteTodo(id)
+        }
+
+        const putTodo = (todo) => {
+          props.putTodo(todo)
         }
 
 
@@ -14,6 +19,7 @@ import Todo from './Todo/Todo'
               title={todo.title} 
               description={todo.description}
               deleteTodo={deleteTodo}
+              putTodo={putTodo}
               />
         ));
 

@@ -6,9 +6,16 @@ import { useRouter } from 'next/router'
 
 const Todo = (props) => {
     const router = useRouter();
+    console.log("todo의 props");
 
     // todo 완료 체크 여부, check state
     const [isCompleted,setIsCompleted] = useState(false);
+
+    const [todo, setTodo] = useState(props);
+
+    // console.log("todo의 props");
+    // console.log(todo);
+
     // todo 완료 체크 값 변경 핸들러 함수
     const checkHandler = () => {
         setIsCompleted(!isCompleted);
@@ -21,16 +28,20 @@ const Todo = (props) => {
       //핸들러함수 호출, 인자값으로 id값 전달 -> lifting state up
     }
 
-    // update Todo
     const updateTodo = () => {
-      router.push('/todo');
-    }
-
+      router.push({
+        pathname: '/todo/put',
+        query: { todoId: todo.id,
+                 todoTitle : todo.title,
+                 todoDescription : todo.description,
+        },
+      });
+    };
 
   return (
     <li className={styles.todo}>
         <input className={styles.toggle} type="checkbox" checked={isCompleted} onChange={checkHandler}/>
-        <label className={`${styles['todo-title']} ${isCompleted && styles['todo-is-completed']}`} onClick={updateTodo}>{props.id} - {props.title}</label>
+        <button className={`${styles['todo-title']} ${isCompleted && styles['todo-is-completed']}`} onClick={updateTodo} >{props.id} - {props.title}</button>
         <GarbageIcon onClick={deleteTodo} className={styles.delete}/>
     </li>
   )
